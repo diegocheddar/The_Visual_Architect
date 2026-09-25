@@ -2569,3 +2569,24 @@ body:has(.error-page) .error-page {
     justify-self: stretch;
   }
 }
+/* Project information overlay: vertically center copy without changing its horizontal placement. */
+.overlay {
+  display: flex;
+  align-items: center;
+}
+.text-panel {
+  padding-top: 0;
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+}
+@media (max-width: 1000px) {
+  .text-panel {
+    padding-top: 0;
+  }
+}
+@media (max-width: 700px) {
+  .text-panel {
+    padding-top: 0;
+    max-height: calc(100dvh - 72px);
+  }
+}
