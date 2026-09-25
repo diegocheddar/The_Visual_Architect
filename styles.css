@@ -229,6 +229,8 @@ button {
   margin-left: -80px;
 }
 .text-link {
+  font-family: "helvetica-neue-lt-pro", sans-serif;
+  font-weight: 300;
   position: fixed;
   right: var(--pad);
   top: 43px;
