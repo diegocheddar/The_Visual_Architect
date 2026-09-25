@@ -49,11 +49,11 @@ window.PROJECTS = {
     images: ["assets/project-5.jpg"],
     text: ["A compact retail environment shaped through a direct material palette and a clear visual identity."]
   },
-  "residence-greece": {
-    title: "Morning Light",
-    location: "Greece",
-    subtitle: "Quadro",
-    images: ["assets/1.jpg", "assets/2.jpg"],
-    text: ["A warm, sunlit, spanish inspired, coffee nook with earthy tones, textured walls, and handcrafted details—where morning light softly fills the space, creating a calm, inviting ritual to start the day."]
+  "lagom": {
+    title: "Lagom",
+    location: "Austin | Texas",
+    subtitle: "Austin | Texas",
+    images: ["assets/lagom/lgm02.jpg", "assets/lagom/lgm01.jpg", "assets/lagom/lgm03.jpg"],
+    text: ["This nordic design kitchen embodies the principles of Scandinavian design: simplicity, functionality, and a deep connection to nature. The aesthetic emphasizes clean lines, minimal clutter, and natural materials, creating a calm and inviting atmosphere.."]
   }
 };
