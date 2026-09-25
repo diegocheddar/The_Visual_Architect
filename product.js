@@ -1,0 +1,9 @@
+const PRODUCTS={
+ 'material-pack-01':{name:'Material Study Pack 01',type:'Digital asset pack',price:'$24',image:'assets/project-1.jpg',format:'ZIP / JPG',description:'A curated set of restrained material references for architectural visualization and presentation work.'},
+ 'lightroom-presets':{name:'Architectural Color Presets',type:'Preset collection',price:'$18',image:'assets/project-4.jpg',format:'XMP',description:'A subtle preset collection designed for neutral architectural imagery, soft contrast and controlled color.'},
+ 'presentation-template':{name:'Presentation Template 01',type:'Digital template',price:'$32',image:'assets/project-6.jpg',format:'PDF / source files',description:'A minimal presentation system for project pitches, image sets and architectural narratives.'},
+ 'texture-library':{name:'Quiet Texture Library',type:'Texture collection',price:'$28',image:'assets/project-3.jpg',format:'ZIP / JPG',description:'A compact texture library focused on quiet surfaces, neutral materials and understated detail.'}
+};
+const id=new URLSearchParams(location.search).get('id')||'material-pack-01',p=PRODUCTS[id]||PRODUCTS['material-pack-01'];
+productImage.src=p.image; productImage.alt=p.name; productType.textContent=p.type; productName.textContent=p.name; productDescription.textContent=p.description; productFormat.textContent=p.format; productPrice.textContent=p.price;
+buyButton.addEventListener('click',async()=>{buyButton.disabled=true;storeMessage.textContent='Opening secure checkout…';try{const r=await fetch('create-checkout-session.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product_id:id})});const d=await r.json();if(!r.ok||!d.url)throw new Error(d.error||'Checkout unavailable');location.href=d.url;}catch(e){storeMessage.textContent=e.message+' Check Stripe configuration.';buyButton.disabled=false;}});

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #231f20;
+        font-family: Inconsolata-Regular, Inconsolata;
+        font-size: 4.04px;
+        font-variation-settings: 'wght' 400, 'wdth' 100;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #363636;
+        stroke-miterlimit: 10;
+        stroke-width: 11px;
+      }
+
+      .cls-3 {
+        fill: #363636;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="cls-3" d="M337.07,335.87l110.33,235.8c.6,1.27.6,2.75,0,4.02l-38.32,82.01c-1.7,3.65-6.89,3.65-8.6,0-49.58-105.95-99.15-211.89-148.73-317.84-1.47-3.15.83-6.76,4.3-6.76l76.71.03c1.84,0,3.52,1.07,4.3,2.74Z"/>
+    <path class="cls-3" d="M662.93,664.13l-110.33-235.8c-.6-1.27-.6-2.75,0-4.02l38.32-82.01c1.7-3.65,6.89-3.65,8.6,0,49.58,105.95,99.15,211.89,148.73,317.84,1.47,3.15-.83,6.76-4.3,6.76l-76.71-.03c-1.84,0-3.52-1.07-4.3-2.74Z"/>
+  </g>
+  <text class="cls-1" transform="translate(0 890.96)"><tspan x="0" y="0">Lorem ipsum</tspan></text>
+  <circle class="cls-2" cx="500" cy="500" r="433.39"/>
+</svg>

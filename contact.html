@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact | The Visual Architect</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="favicon" href="/assets/favicon.svg" />
+  </head>
+  <body class="fade-page inquiry-page">
+    <header class="site-header">
+      <a class="brand" href="index.html"><img class="header-brand-logo" src="assets/favicon.svg" alt="" aria-hidden="true"><span>The Visual Architect</a>
+      <a class="close" href="index.html" aria-label="Close">×</a>
+    </header>
+    <main class="inquiry-layout">
+
+
+      <section class="inquiry-brief">
+
+        <h3>New project inquiries</h3>
+        <p>
+          Tell us a little about your project, its location, scope and timeline.
+          We welcome residential, commercial and creative collaborations.
+        </p>
+        <p>
+          We’ll review your message and get back to you as soon as possible.
+        </p>
+        
+        
+        <p>l: Belton | Texas</p>
+        <p><a href="mailto:johnny@thevisualarchitect.io">e: johnny@thevisualarchitect.io</a></p>
+        <br>
+        <div class="social-icons" aria-label="Social media">
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">ig</a
+          ><a href="https://www.behance.com" target="_blank" rel="noopener noreferrer" aria-label="Behance">be</a
+          ><a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">p</a
+          ><a href="https://www.gumroad.com" target="_blank" rel="noopener noreferrer" aria-label="Gumroad">gu</a>
+        </div>
+       
+
+      
+      </section>
+
+
+
+      <form class="inquiry-form" action="form.php" method="post">
+        <div class="form-field">
+          <label for="name"
+            >Name <span class="required-mark" aria-hidden="true">*</span></label
+          ><input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+          />
+        </div>
+        <div class="form-field">
+          <label for="email"
+            >Email
+            <span class="required-mark" aria-hidden="true">*</span></label
+          ><input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+          />
+        </div>
+        <div class="form-field">
+          <label for="company">Company / Brand</label
+          ><input
+            id="company"
+            name="company"
+            type="text"
+            autocomplete="organization"
+          />
+        </div>
+        <div class="form-field">
+          <label for="project">Project type</label
+          ><input id="project" name="project" type="text" />
+        </div>
+        <div class="form-field">
+          <label for="budget">Budget</label
+          ><input id="budget" name="budget" type="text" />
+        </div>
+        <div class="form-field form-message">
+          <label for="message"
+            >Tell us about your project
+            <span class="required-mark" aria-hidden="true">*</span></label
+          ><textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button class="form-submit" type="submit">
+          Send inquiry <span aria-hidden="true">→</span>
+        </button>
+        <p>* Required field</p>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    </main>
+  </body>
+</html>
