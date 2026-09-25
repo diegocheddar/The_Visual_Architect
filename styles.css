@@ -2549,3 +2549,23 @@ body:has(.error-page) .error-page {
     padding: 30px 0 58px;
   }
 }
+
+
+/* Mobile Index — full-width project frames only */
+@media (max-width: 700px) {
+  .home {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .home .gallery {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .home .gallery .card {
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+  }
+}
