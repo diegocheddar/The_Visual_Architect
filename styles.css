@@ -703,9 +703,16 @@ body:has(.project) .text-link {
 }
 .bio-description {
   margin: 0 0 42px;
-  color: var(--muted);
+  color: #262626;
   font-size: 15px;
   line-height: 1.45;
+}
+
+.bio-info {
+  font-family: "helvetica-neue-lt-pro", sans-serif;
+  font-weight: 300;
+  margin: 0 0 20px;
+  font-size: 12px;
 }
 .bio-link-list {
   display: flex;
@@ -756,6 +763,12 @@ body:has(.project) .text-link {
 .bio-social-icons a:focus-visible {
   opacity: 0.5;
 }
+
+.bio-footer {
+font-family: "Inconsolata", monospace;
+font-size: 10px;
+}
+
 @media (max-width: 700px) {
   .bio-header {
     height: 88px;
@@ -2623,5 +2636,106 @@ body:has(.error-page) .error-page {
     align-items: center;
     padding-top: 0;
     padding-bottom: 0;
+  }
+}
+
+/* Bio page — keep the entire link-in-bio screen within one viewport */
+.bio-page {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.bio-page .bio-header {
+  flex: 0 0 88px;
+  height: 88px;
+}
+.bio-page .bio-links-page {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: min(520px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: clamp(8px, 1.4vh, 16px) 0 clamp(12px, 2vh, 22px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bio-page .bio-image {
+  width: clamp(68px, 11vh, 100px);
+  height: clamp(68px, 11vh, 100px);
+  margin-bottom: clamp(8px, 1.4vh, 16px);
+}
+.bio-page .bio-description {
+  margin-bottom: clamp(14px, 2.5vh, 28px);
+  font-size: clamp(12px, 1.7vh, 15px);
+  line-height: 1.35;
+}
+.bio-page .bio-link-list a {
+  min-height: clamp(38px, 5.6vh, 52px);
+  font-size: clamp(12px, 1.7vh, 15px);
+}
+.bio-page .bio-social-icons {
+  gap: clamp(12px, 2vw, 18px);
+  margin-top: clamp(14px, 2.5vh, 26px);
+}
+.bio-page .bio-social-icons a {
+  width: clamp(26px, 4vh, 30px);
+  height: clamp(26px, 4vh, 30px);
+  font-size: 10px;
+}
+
+@media (max-width: 700px) {
+  .bio-page .bio-header {
+    flex-basis: 72px;
+    height: 72px;
+  }
+  .bio-page .bio-links-page {
+    width: calc(100% - 56px);
+    margin: 0 auto;
+    padding-top: clamp(4px, 1vh, 10px);
+    padding-bottom: clamp(8px, 1.5vh, 16px);
+  }
+  .bio-page .bio-image {
+    width: clamp(62px, 10vh, 84px);
+    height: clamp(62px, 10vh, 84px);
+  }
+  .bio-page .bio-description {
+    margin-bottom: clamp(10px, 2vh, 20px);
+  }
+  .bio-page .bio-link-list a {
+    min-height: clamp(36px, 5.3vh, 46px);
+  }
+  .bio-page .bio-social-icons {
+    margin-top: clamp(10px, 2vh, 20px);
+  }
+}
+
+@media (max-height: 620px) {
+  .bio-page .bio-header {
+    flex-basis: 62px;
+    height: 62px;
+  }
+  .bio-page .bio-image {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 7px;
+  }
+  .bio-page .bio-description {
+    margin-bottom: 8px;
+    font-size: 11px;
+  }
+  .bio-page .bio-link-list a {
+    min-height: 33px;
+    font-size: 11px;
+  }
+  .bio-page .bio-social-icons {
+    margin-top: 8px;
+  }
+  .bio-page .bio-social-icons a {
+    width: 24px;
+    height: 24px;
+    font-size: 9px;
   }
 }
