@@ -32,8 +32,8 @@ window.PROJECTS = {
     title: "Barton Creek",
     location: "Austin | Texas",
     subtitle: "Austin | Texas",
-    images: ["assets/project-3.jpg", "assets/project-4.jpg", "assets/project-1.jpg"],
-    text: ["An interior study organized around simple volumes, quiet surfaces and carefully framed transitions between domestic functions."]
+    images: ["assets/bartoncreek/bc01.jpg", "assets/bartoncreek/bc02.jpg", "assets/bartoncreek/bc03.jpg", "assets/bartoncreek/bc04.jpg"],
+    text: ["A warm, minimalist kitchen with wooden cabinetry, a marble countertop and backsplash, and a simple open shelf above the sink. Soft natural light comes through a window, highlighting the clean lines, neutral tones, and uncluttered design. This kitchen feels calm, intuitive, and easy to live in. The long, uncluttered countertop gives plenty of space to prep and move freely, while the integrated sink and smooth surfaces make cleaning feel effortless. Natural light pours in from the side window, creating a warm, inviting atmosphere that makes everyday tasks—like making coffee or cooking—feel more relaxed and enjoyable. The open shelf keeps essentials within reach without crowding the space, and the soft tones and materials create a sense of quiet focus, turning the kitchen into a peaceful, functional retreat rather than a busy workspace."]
   },
   "hygge": {
     title: "Hygge",
