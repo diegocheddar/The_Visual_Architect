@@ -54,9 +54,10 @@ if (projectGallery) {
   const project = projects[requestedProject] || projects.kifisia;
 
   if (project) {
-    const images = Array.isArray(project.images) && project.images.length
-      ? project.images
-      : ["assets/project-1.jpg"];
+    const images =
+      Array.isArray(project.images) && project.images.length
+        ? project.images
+        : ["assets/project-1.jpg"];
     const image = projectGallery.querySelector("[data-project-image]");
     const counter = projectGallery.querySelector("[data-project-counter]");
     const prevButton = projectGallery.querySelector("[data-project-prev]");
@@ -65,15 +66,19 @@ if (projectGallery) {
     const subtitle = document.querySelector("[data-project-subtitle]");
     const text = document.querySelector("[data-project-text]");
 
-    document.title = project.location ? `${project.title} | ${project.location}` : project.title;
+    document.title = project.location
+      ? `${project.title} | ${project.location}`
+      : project.title;
     if (title) title.textContent = project.title;
     if (subtitle) subtitle.textContent = project.subtitle || "";
     if (text) {
-      text.replaceChildren(...(project.text || []).map((copy) => {
-        const paragraph = document.createElement("p");
-        paragraph.textContent = copy;
-        return paragraph;
-      }));
+      text.replaceChildren(
+        ...(project.text || []).map((copy) => {
+          const paragraph = document.createElement("p");
+          paragraph.textContent = copy;
+          return paragraph;
+        }),
+      );
     }
 
     let current = 0;
@@ -177,7 +182,6 @@ if (splash) {
   }
 }
 
-
 // Minimal custom validation for the project inquiry form.
 const inquiryForm = document.querySelector(".inquiry-form");
 if (inquiryForm) {
@@ -215,12 +219,15 @@ if (inquiryForm) {
     });
     field.addEventListener("blur", () => {
       if (!field.value.trim()) showError(field, "Please fill out this field.");
-      else if (!field.validity.valid) showError(field, "Please enter a valid email.");
+      else if (!field.validity.valid)
+        showError(field, "Please enter a valid email.");
     });
   });
 
   inquiryForm.addEventListener("submit", (event) => {
-    const firstInvalid = requiredFields.find((field) => !field.validity.valid || !field.value.trim());
+    const firstInvalid = requiredFields.find(
+      (field) => !field.validity.valid || !field.value.trim(),
+    );
     if (!firstInvalid) return;
     event.preventDefault();
     const message = !firstInvalid.value.trim()
