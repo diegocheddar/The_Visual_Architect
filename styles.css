@@ -2592,3 +2592,36 @@ body:has(.error-page) .error-page {
     max-height: calc(100dvh - 72px);
   }
 }
+
+
+/* Desktop Contact page: vertically center the contact information in the viewport
+   without changing its horizontal position or the mobile/tablet layout. */
+@media (min-width: 1001px) {
+  .contact {
+    min-height: calc(100vh - 106px);
+    min-height: calc(100dvh - 106px);
+    box-sizing: border-box;
+  }
+
+  .contact-info {
+    align-self: center;
+    padding-top: 0;
+  }
+
+  .contact-image {
+    align-self: start;
+  }
+}
+
+/* Desktop Project Inquiry: vertically center the brief and form within the
+   viewport below the header while preserving their horizontal placement. */
+@media (min-width: 1001px) {
+  .inquiry-page .inquiry-layout {
+    min-height: calc(100vh - 106px);
+    min-height: calc(100dvh - 106px);
+    box-sizing: border-box;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
