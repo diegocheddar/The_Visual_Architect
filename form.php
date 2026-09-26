@@ -1,7 +1,7 @@
 <?php
 // Minimal contact-form handler for the Project Inquiry page.
 // IMPORTANT: Replace the email below with the address that should receive inquiries.
-$recipient = "you@example.com";
+$recipient = "johnny@thevisualarchitect.io";
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: contact-form.html");
@@ -42,7 +42,7 @@ if ($name === "" || !$email || $message === "") {
     $fromAddress = "no-reply@" . $mailDomain;
 
     $studioHeaders = [
-        "From: aarchitect Website <{$fromAddress}>",
+        "From: The Visual Architect Website <{$fromAddress}>",
         "Reply-To: {$email}",
         "Content-Type: text/plain; charset=UTF-8"
     ];
@@ -55,8 +55,8 @@ if ($name === "" || !$email || $message === "") {
     $safeMessage = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
 
     // Replace this with the public URL of the site before launch so the CTA works from email.
-    $siteUrl = "https://yourdomain.com";
-    $clientSubject = "Thank you for your inquiry — aarchitect";
+    $siteUrl = "https://thevisualarchitect.io";
+    $clientSubject = "Thank you for your inquiry — The Visual Architect";
     $heroCid = 'aarchitect-hero';
     $heroPath = __DIR__ . '/assets/contact.jpg';
 
@@ -152,7 +152,7 @@ if ($name === "" || !$email || $message === "") {
 </head>
 <body class="fade-page inquiry-page">
 <header class="site-header">
-  <a class="brand" href="home.html">aarchitect</a>
+  <a class="brand" href="index.html">The Visual Architect</a>
   <a class="close" href="contact.html" aria-label="Close">×</a>
 </header>
 <main class="form-result">
