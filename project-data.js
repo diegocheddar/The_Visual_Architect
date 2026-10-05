@@ -23,7 +23,7 @@ window.PROJECTS = {
     title: "Mojave",
     location: "Joshua Tree | California",
     subtitle: "Joshua Tree | California",
-    images: ["assets/mojave/mjv01.jpg", "assets/mojave/mjv02.jpg", "assets/mojave/mjv03.jpg", "assets/mojave/mjv05.jpg", "assets/mojave/mjv07.jpg", "assets/mojave/mjv08.jpg"],
+    images: ["assets/mojave/mjv01.webp", "assets/mojave/mjv02.webp", "assets/mojave/mjv03.webp", "assets/mojave/mjv05.jpg", "assets/mojave/mjv07.jpg", "assets/mojave/mjv08.jpg"],
     text: ["A minimal kitchen within the vistas of Joshua Tree is a serene and elemental space, harmonizing with the mojave deserts stark beauty. The kitchen, housed in a low-slung structure of smooth plaster, opens directly to panoramic views of sculptural boulders, spindly Joshua trees, and endless sky. The design is stripped to essentials: open shelving, black fixtures, and a polished marble countertop that echoes the desert floor. A single row of cabinetry floats against a plastered wall. The appliances are discreet, built-in and silent so as not to interrupt the sense of stillness and tranquility."     
     ] 
     
