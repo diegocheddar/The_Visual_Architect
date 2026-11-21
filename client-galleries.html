@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Client Galleries — The Visual Architect</title>
+  <meta name="description" content="Private client visualization galleries by The Visual Architect." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="favicon" href="/assets/favicon.svg" />
+</head>
+<body class="fade-page client-gallery-body">
+  <header class="site-header client-gallery-header">
+    <a class="brand" href="index.html"><img class="header-brand-logo" src="assets/favicon.svg" alt="" aria-hidden="true"><span>The Visual Architect</span></a>
+    <a class="client-gallery-close" href="index.html" aria-label="Close galleries">×</a>
+  </header>
+
+  <main class="gallery-index-page">
+    <section class="gallery-index-intro">
+      <p class="client-gallery-kicker">Private client delivery</p>
+      <!-- <h1>Client Galleries</h1> -->
+      <!-- <p>Select a project to view its information and access the client image gallery.</p> -->
+    </section>
+
+    <section class="gallery-index-grid" aria-label="Client projects">
+      <a class="gallery-index-card" href="#" data-client-project
+         data-client-title="Strasser"
+         data-client-subtitle="Client visualization"
+         data-client-text="Private client visualization gallery. Select View gallery to review and download the delivered Strasser images."
+         data-client-url="strasser.html"
+         data-client-key="strasser"
+         data-client-passcode="strasser301">
+        <div class="gallery-index-image gallery-index-logo"><img src="assets/strasser.svg" alt="Strasser"></div>
+        <div class="gallery-index-copy"><span>01</span><div><h2>Strasser</h2><p>Client visualization</p></div><span>Info +</span></div>
+      </a>
+
+      <a class="gallery-index-card" href="#" data-client-project
+         data-client-title="Ferm Living"
+         data-client-subtitle="Client visualization"
+         data-client-text="Private client visualization gallery. Select View gallery to review and download the delivered Ferm Living images."
+         data-client-url="ferm_living.html"
+         data-client-key="ferm_living"
+         data-client-passcode="1234">
+        <div class="gallery-index-image gallery-index-logo"><img src="assets/ferm_living.svg" alt="Ferm Living"></div>
+        <div class="gallery-index-copy"><span>03</span><div><h2>Ferm Living</h2><p>Client visualization</p></div><span>Info +</span></div>
+      </a>
+
+      <a class="gallery-index-card" href="#" data-client-project
+         data-client-title="Miniforms"
+         data-client-subtitle="Client visualization"
+         data-client-text="Private client visualization gallery. Select View gallery to review and download the delivered Miniforms images."
+         data-client-url="miniforms.html"
+         data-client-key="miniforms"
+         data-client-passcode="1234">
+        <div class="gallery-index-image gallery-index-logo"><img src="assets/miniforms.svg" alt="Miniforms"></div>
+        <div class="gallery-index-copy"><span>03</span><div><h2>Miniforms</h2><p>Client visualization</p></div><span>Info +</span></div>
+      </a>
+
+      <a class="gallery-index-card" href="#" data-client-project
+         data-client-title="Eva Solo"
+         data-client-subtitle="Client visualization"
+         data-client-text="Private client visualization gallery. Select View gallery to review and download the delivered Eva Solo images."
+         data-client-url="evasolo.html"
+         data-client-key="evasolo"
+         data-client-passcode="1234">
+        <div class="gallery-index-image gallery-index-logo"><img src="assets/evasolo.svg" alt="Eva Solo"></div>
+        <div class="gallery-index-copy"><span>04</span><div><h2>Eva Solo</h2><p>Client visualization</p></div><span>Info +</span></div>
+      </a>
+
+      <a class="gallery-index-card" href="#" data-client-project
+         data-client-title="Hay"
+         data-client-subtitle="Client visualization"
+         data-client-text="Private client visualization gallery. Select View gallery to review and download the delivered Hay images."
+         data-client-url="hay.html"
+         data-client-key="hay"
+         data-client-passcode="1234">
+        <div class="gallery-index-image gallery-index-logo"><img src="assets/hay.svg" alt="Hay"></div>
+        <div class="gallery-index-copy"><span>05</span><div><h2>Hay</h2><p>Client visualization</p></div><span>Info +</span></div>
+      </a>
+
+      <a class="gallery-index-card" href="#" data-client-project
+         data-client-title="&tradition"
+         data-client-subtitle="Client visualization"
+         data-client-text="Private client visualization gallery. Select View gallery to review and download the delivered Hay images."
+         data-client-url="&tradition.html"
+         data-client-key="&tradition"
+         data-client-passcode="1234">
+        <div class="gallery-index-image gallery-index-logo"><img src="assets/&tradition.svg" alt="&tradition"></div>
+        <div class="gallery-index-copy"><span>05</span><div><h2>&tradition</h2><p>Client visualization</p></div><span>Info +</span></div>
+      </a>
+
+    </section>
+
+    <footer class="client-gallery-footer"><span>The Visual Architect</span><span>Client galleries</span></footer>
+  </main>
+
+  <section class="overlay client-project-overlay" data-client-overlay aria-hidden="true">
+    <button class="close" type="button" data-client-close aria-label="Close project information">×</button>
+    <article class="text-panel">
+      <h1 data-client-title>Client project</h1>
+      <p data-client-subtitle></p>
+      <div data-client-text></div>
+      <a class="client-project-view" href="#" data-client-view hidden>View gallery +</a>
+    </article>
+  </section>
+
+
+  <section class="client-passcode-overlay" data-client-passcode-overlay aria-hidden="true">
+    <div class="client-passcode-card" role="dialog" aria-modal="true" aria-labelledby="client-passcode-title">
+      <button class="client-passcode-close" type="button" data-client-passcode-close aria-label="Close passcode entry">×</button>
+      <p class="client-gallery-kicker">Private gallery</p>
+      <h2 id="client-passcode-title">Enter passcode</h2>
+      <p class="client-passcode-copy">This gallery is private. Enter the client passcode to continue.</p>
+      <form class="client-passcode-form" data-client-passcode-form novalidate>
+        <label class="sr-only" for="client-gallery-passcode">Gallery passcode</label>
+        <div class="client-passcode-field">
+          <input id="client-gallery-passcode" data-client-passcode-input type="password" inputmode="text" autocomplete="current-password" placeholder="Passcode" required>
+          <button type="submit">View gallery +</button>
+        </div>
+        <p class="client-passcode-error" data-client-passcode-error role="alert" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

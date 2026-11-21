@@ -2739,3 +2739,261 @@ body:has(.error-page) .error-page {
     font-size: 9px;
   }
 }
+
+
+
+/* Client image delivery gallery */
+.client-gallery-body { background:#fff; color:#111; }
+.client-gallery-header { position:relative; top:auto; background:#fff; }
+.client-gallery-close { color:inherit; text-decoration:none; font-size:25px; font-weight:300; line-height:1; }
+.client-gallery-page { padding:42px var(--pad) 28px; }
+.client-gallery-intro { display:grid; grid-template-columns:1fr 1fr; gap:40px; padding:18px 0 54px; border-bottom:1px solid rgba(0,0,0,.14); }
+.client-gallery-kicker { margin:0 0 14px; font-size:10px; letter-spacing:.15em; text-transform:uppercase; opacity:.52; }
+.client-gallery-intro h1 { margin:0; font-size:clamp(34px,4.2vw,68px); line-height:.96; font-weight:300; letter-spacing:-.04em; }
+.client-gallery-meta { justify-self:end; width:min(100%,320px); font-size:11px; line-height:1.6; }
+.client-gallery-meta p { margin:0; }
+.client-download-all { display:flex; justify-content:space-between; gap:24px; margin-top:24px; padding:13px 0 10px; border-top:1px solid #111; border-bottom:1px solid #111; color:inherit; text-decoration:none; text-transform:uppercase; letter-spacing:.1em; font-size:10px; }
+.client-gallery-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:58px 24px; padding:42px 0 76px; }
+.client-gallery-item { min-width:0; }
+.client-gallery-image { display:block; aspect-ratio:3/4; overflow:hidden; background:#f3f3f1; }
+.client-gallery-image img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
+.client-gallery-image:hover img { transform:scale(1.015); }
+.client-gallery-caption { display:flex; justify-content:space-between; gap:18px; padding-top:10px; font-size:10px; text-transform:uppercase; letter-spacing:.08em; }
+.client-gallery-caption span { opacity:.45; }
+.client-gallery-caption a { color:inherit; text-decoration:none; border-bottom:1px solid transparent; }
+.client-gallery-caption a:hover { border-color:currentColor; }
+.client-gallery-footer { display:flex; justify-content:space-between; padding-top:16px; border-top:1px solid rgba(0,0,0,.14); font-size:10px; text-transform:uppercase; letter-spacing:.1em; opacity:.55; }
+@media (max-width:700px) {
+  .client-gallery-header { position:relative !important; height:72px; padding:0 var(--pad); }
+  .client-gallery-page { padding-top:18px; }
+  .client-gallery-intro { grid-template-columns:1fr; gap:30px; padding:8px 0 36px; }
+  .client-gallery-meta { justify-self:stretch; width:100%; }
+  .client-gallery-grid { grid-template-columns:1fr; gap:38px; padding:30px 0 58px; }
+  .client-gallery-image { aspect-ratio:3/4; }
+}
+
+/* Client gallery index */
+.gallery-index-page { padding:42px var(--pad) 28px; }
+.gallery-index-intro { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:end; padding:18px 0 54px; border-bottom:1px solid rgba(0,0,0,.14); }
+.gallery-index-intro .client-gallery-kicker { grid-column:1/-1; margin-bottom:4px; }
+.gallery-index-intro h1 { margin:0; font-size:clamp(44px,6vw,88px); line-height:.9; font-weight:300; letter-spacing:-.05em; }
+.gallery-index-intro > p:last-child { margin:0; justify-self:end; max-width:300px; font-size:11px; line-height:1.6; opacity:.65; }
+.gallery-index-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; padding:42px 0 76px; }
+.gallery-index-card { color:inherit; text-decoration:none; min-width:0; }
+.gallery-index-image { aspect-ratio:1/1; overflow:hidden; background:#f3f3f1; }
+.gallery-index-image img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
+.gallery-index-card:hover .gallery-index-image img { transform:scale(1.015); }
+.gallery-index-copy { display:grid; grid-template-columns:28px 1fr auto; gap:12px; align-items:start; padding-top:12px; font-size:10px; text-transform:uppercase; letter-spacing:.08em; }
+.gallery-index-copy > span:first-child { opacity:.42; }
+.gallery-index-copy h2 { margin:0 0 4px; font:inherit; }
+.gallery-index-copy p { margin:0; opacity:.5; }
+.gallery-index-copy > span:last-child { white-space:nowrap; }
+@media (max-width:900px) { .gallery-index-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:700px) { .gallery-index-page { padding:18px var(--pad) 28px; } .gallery-index-intro { grid-template-columns:1fr; gap:20px; padding:8px 0 34px; } .gallery-index-intro .client-gallery-kicker { grid-column:auto; } .gallery-index-intro > p:last-child { justify-self:start; } .gallery-index-grid { grid-template-columns:1fr; gap:38px; padding:30px 0 58px; } }
+
+/* Client gallery — add breathing room around portrait images while preserving
+   the existing 3:4 frame, captions, hover behavior, and download controls. */
+.client-gallery-image {
+  padding: clamp(40px, 1.4vw, 22px);
+}
+
+@media (max-width: 700px) {
+  .client-gallery-image {
+    padding: 12px;
+  }
+}
+
+/* Match client gallery image padding to the page background. */
+.client-gallery-image { background:#fff; }
+
+/* Client galleries: downloads are available only from the Download text. */
+.client-gallery-image {
+  cursor: default;
+}
+.client-gallery-image:hover img {
+  transform: none;
+}
+
+/* Multi-client gallery: project cards open the same clean information overlay
+   used by the regular project gallery before entering a client gallery. */
+.gallery-index-card {
+  display: block;
+}
+.gallery-index-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.gallery-index-logo img {
+  width: 55%;
+  height: 55%;
+  object-fit: contain;
+}
+.client-project-overlay .text-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.client-project-view {
+  display: inline-block;
+  width: max-content;
+  margin-top: 12px;
+  color: #555;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.client-project-view[hidden] {
+  display: none;
+}
+
+/* Individual client gallery: center the gallery kicker only. */
+.client-gallery-page .client-gallery-kicker {
+  width: 100%;
+  text-align: center;
+}
+
+/* Multi-client gallery: center the H1 title to the page. */
+.gallery-index-intro {
+  grid-column: 1 / -1;
+  width: 100%;
+  text-align: center;
+  justify-self: center;
+}
+
+@media (max-width: 700px) {
+  .gallery-index-intro {
+    grid-column: auto;
+    text-align: center;
+  }
+}
+
+.gallery-index-intro img, h1{
+  grid-column: 1 / -1;
+  width: 50%;
+  text-align: center;
+  justify-self: center;
+}
+
+@media (max-width: 700px) {
+  .gallery-index-intro img h1{
+    grid-column: auto;
+    text-align: center;
+  }
+}
+
+
+
+/* Private client gallery passcode gate */
+.client-passcode-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--pad);
+  background: rgba(255,255,255,.96);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+.client-passcode-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.client-passcode-card {
+  position: relative;
+  width: min(100%, 470px);
+  padding: 42px 0 18px;
+}
+.client-passcode-card .client-gallery-kicker {
+  text-align: left;
+  margin-bottom: 14px;
+}
+.client-passcode-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(30px, 4vw, 54px);
+  line-height: .98;
+  font-weight: 300;
+  letter-spacing: -.04em;
+}
+.client-passcode-copy {
+  max-width: 340px;
+  margin: 0 0 32px;
+  font-size: 11px;
+  line-height: 1.6;
+  opacity: .62;
+}
+.client-passcode-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+}
+.client-passcode-field {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-bottom: 1px solid rgba(0,0,0,.35);
+}
+.client-passcode-field input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  padding: 12px 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: .03em;
+}
+.client-passcode-field input::placeholder { color: rgba(0,0,0,.38); }
+.client-passcode-field button {
+  border: 0;
+  padding: 0 0 0 18px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+.client-passcode-error {
+  min-height: 18px;
+  margin: 10px 0 0;
+  font-size: 10px;
+  line-height: 1.4;
+  color: #7b2f2f;
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+@media (max-width:700px) {
+  .client-passcode-card { padding-top: 34px; }
+  .client-passcode-field { grid-template-columns: 1fr; }
+  .client-passcode-field button { padding: 10px 0 12px; text-align: left; }
+}

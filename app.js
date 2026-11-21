@@ -238,3 +238,134 @@ if (inquiryForm) {
     firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
   });
 }
+
+
+// Client gallery index: open project information before entering a gallery.
+const clientProjectOverlay = document.querySelector("[data-client-overlay]");
+if (clientProjectOverlay) {
+  const clientTitle = clientProjectOverlay.querySelector("[data-client-title]");
+  const clientSubtitle = clientProjectOverlay.querySelector("[data-client-subtitle]");
+  const clientText = clientProjectOverlay.querySelector("[data-client-text]");
+  const clientView = clientProjectOverlay.querySelector("[data-client-view]");
+  const closeClientOverlay = () => {
+    clientProjectOverlay.classList.remove("open");
+    clientProjectOverlay.setAttribute("aria-hidden", "true");
+  };
+
+  document.querySelectorAll("[data-client-project]").forEach((card) => {
+    card.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (clientTitle) clientTitle.textContent = card.dataset.clientTitle || "Client project";
+      if (clientSubtitle) clientSubtitle.textContent = card.dataset.clientSubtitle || "";
+      if (clientText) {
+        clientText.replaceChildren();
+        const p = document.createElement("p");
+        p.textContent = card.dataset.clientText || "";
+        clientText.appendChild(p);
+      }
+      const url = card.dataset.clientUrl || "";
+      if (clientView) {
+        if (url) {
+          clientView.href = url;
+          clientView.hidden = false;
+        } else {
+          clientView.removeAttribute("href");
+          clientView.hidden = true;
+        }
+      }
+      clientProjectOverlay.classList.add("open");
+      clientProjectOverlay.setAttribute("aria-hidden", "false");
+    });
+  });
+
+  clientProjectOverlay.querySelector("[data-client-close]")?.addEventListener("click", closeClientOverlay);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && clientProjectOverlay.classList.contains("open")) {
+      closeClientOverlay();
+    }
+  });
+}
+
+// Private client gallery passcode gate. This works on static hosting and keeps
+// access for the current browser tab/session after a successful unlock.
+const clientPasscodeOverlay = document.querySelector("[data-client-passcode-overlay]");
+if (clientProjectOverlay && clientPasscodeOverlay) {
+  const passcodeForm = clientPasscodeOverlay.querySelector("[data-client-passcode-form]");
+  const passcodeInput = clientPasscodeOverlay.querySelector("[data-client-passcode-input]");
+  const passcodeError = clientPasscodeOverlay.querySelector("[data-client-passcode-error]");
+  const passcodeClose = clientPasscodeOverlay.querySelector("[data-client-passcode-close]");
+  const clientView = clientProjectOverlay.querySelector("[data-client-view]");
+  let pendingGallery = null;
+
+  const closePasscodeOverlay = () => {
+    clientPasscodeOverlay.classList.remove("open");
+    clientPasscodeOverlay.setAttribute("aria-hidden", "true");
+    if (passcodeInput) passcodeInput.value = "";
+    if (passcodeError) passcodeError.textContent = "";
+  };
+
+  const openPasscodeOverlay = (details) => {
+    pendingGallery = details;
+    clientProjectOverlay.classList.remove("open");
+    clientProjectOverlay.setAttribute("aria-hidden", "true");
+    clientPasscodeOverlay.classList.add("open");
+    clientPasscodeOverlay.setAttribute("aria-hidden", "false");
+    window.setTimeout(() => passcodeInput?.focus(), 50);
+  };
+
+  // Carry the selected gallery's access settings onto the View gallery link.
+  document.querySelectorAll("[data-client-project]").forEach((card) => {
+    card.addEventListener("click", () => {
+      window.setTimeout(() => {
+        if (!clientView || clientView.hidden) return;
+        clientView.dataset.galleryKey = card.dataset.clientKey || "";
+        clientView.dataset.galleryPasscode = card.dataset.clientPasscode || "";
+      }, 0);
+    });
+  });
+
+  clientView?.addEventListener("click", (event) => {
+    const url = clientView.getAttribute("href") || "";
+    const key = clientView.dataset.galleryKey || "";
+    const passcode = clientView.dataset.galleryPasscode || "";
+    if (!url || !key || !passcode) return;
+
+    event.preventDefault();
+    try {
+      if (sessionStorage.getItem(`clientGalleryAccess:${key}`) === "1") {
+        window.location.href = url;
+        return;
+      }
+    } catch (error) {}
+    openPasscodeOverlay({ url, key, passcode });
+  });
+
+  passcodeForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!pendingGallery || !passcodeInput) return;
+    if (passcodeInput.value === pendingGallery.passcode) {
+      try {
+        sessionStorage.setItem(`clientGalleryAccess:${pendingGallery.key}`, "1");
+      } catch (error) {}
+      const destination = pendingGallery.url;
+      closePasscodeOverlay();
+      window.location.href = destination;
+      return;
+    }
+    if (passcodeError) passcodeError.textContent = "Incorrect passcode. Please try again.";
+    passcodeInput.select();
+  });
+
+  passcodeInput?.addEventListener("input", () => {
+    if (passcodeError) passcodeError.textContent = "";
+  });
+  passcodeClose?.addEventListener("click", closePasscodeOverlay);
+  clientPasscodeOverlay.addEventListener("click", (event) => {
+    if (event.target === clientPasscodeOverlay) closePasscodeOverlay();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && clientPasscodeOverlay.classList.contains("open")) {
+      closePasscodeOverlay();
+    }
+  });
+}
