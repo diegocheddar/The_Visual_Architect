@@ -32,7 +32,7 @@ window.PROJECTS = {
     title: "Barton Creek",
     location: "Austin | Texas",
     subtitle: "Austin | Texas",
-    images: ["assets/bartoncreek/bc01.jpg", "assets/bartoncreek/bc02.jpg", "assets/bartoncreek/bc03.jpg", "assets/bartoncreek/bc04.jpg"],
+    images: ["assets/bartoncreek/bc01.webp", "assets/bartoncreek/bc02.webp", "assets/bartoncreek/bc03.webp", "assets/bartoncreek/bc04.webp"],
     text: ["A warm, minimalist kitchen with wooden cabinetry, a marble countertop and backsplash, and a simple open shelf above the sink. Soft natural light comes through a window, highlighting the clean lines, neutral tones, and uncluttered design. This kitchen feels calm, intuitive, and easy to live in. The long, uncluttered countertop gives plenty of space to prep and move freely, while the integrated sink and smooth surfaces make cleaning feel effortless. Natural light pours in from the side window, creating a warm, inviting atmosphere that makes everyday tasks—like making coffee or cooking—feel more relaxed and enjoyable. The open shelf keeps essentials within reach without crowding the space, and the soft tones and materials create a sense of quiet focus, turning the kitchen into a peaceful, functional retreat rather than a busy workspace."]
   },
   "hygge": {
@@ -53,7 +53,7 @@ window.PROJECTS = {
     title: "Lagom",
     location: "Austin | Texas",
     subtitle: "Austin | Texas",
-    images: ["assets/lagom/lgm02.jpg", "assets/lagom/lgm01.jpg", "assets/lagom/lgm03.jpg"],
+    images: ["assets/lagom/lgm03.webp", "assets/lagom/lgm01.webp", "assets/lagom/lgm02.webp"],
     text: ["This nordic design kitchen embodies the principles of Scandinavian design: simplicity, functionality, and a deep connection to nature. The aesthetic emphasizes clean lines, minimal clutter, and natural materials, creating a calm and inviting atmosphere.."]
   }
 };
